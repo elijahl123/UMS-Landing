@@ -8,66 +8,43 @@
     <meta name="theme-color" content="rgb(248,173,157)">
     <meta name="description" content="Terms of Service for Untitled Management Software.">
     <link rel="icon" type="image/svg+xml" sizes="150x150" href="../assets/img/UMS%20Logo.svg">
+    <link rel="apple-touch-icon" href="../assets/img/pwa-icon-192.png">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="../manifest.json">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap"></noscript>
     <link rel="stylesheet" href="../assets/css/styles.min.css">
-    <style>
-        .policy-page {
-            background: var(--secondary-color);
-        }
-
-        .policy-card {
-            background: #fff;
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            border-radius: 8px;
-            box-shadow: 0 0.75rem 2rem rgba(15, 23, 42, 0.06);
-        }
-
-        .policy-page h1,
-        .policy-page h2 {
-            font-weight: 700;
-        }
-
-        .policy-page h1,
-        .policy-page h2,
-        .policy-brand,
-        .policy-page a {
-            color: var(--main-color);
-        }
-
-        .policy-page p {
-            color: slategray;
-            line-height: 1.75;
-        }
-    </style>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MS9P50S36"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-8MS9P50S36');
-    </script>
 </head>
 
-<body class="policy-page" style="font-family: Poppins, sans-serif;">
-    <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean" style="background: whitesmoke;padding: 16px 0;">
-        <div class="container"><a class="navbar-brand d-none d-md-block" href="https://untitledmanagementsoftware.com/" style="color: var(--main-color);">Untitled Management Software</a><a class="navbar-brand d-block d-md-none" href="https://untitledmanagementsoftware.com/" style="color: var(--main-color);">UMS</a>
+<body class="policy-page tw-font-sans">
+    <nav class="navbar navbar-light navbar-expand-lg sticky-top navigation-clean" aria-label="Primary navigation">
+        <div class="container site-nav">
+            <a class="navbar-brand brand-lockup" href="../" aria-label="Untitled Management Software home">
+                <img src="../assets/img/UMS%20Logo.svg" alt="" width="42" height="42" fetchpriority="high">
+                <span class="d-none d-sm-inline">Untitled Management Software</span>
+                <span class="d-sm-none">UMS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ums-main-nav" aria-controls="ums-main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#bars"></use></svg>
+            </button>
             <div class="collapse navbar-collapse" id="ums-main-nav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item d-flex justify-content-center px-3"><a class="btn btn-ums" role="button" href="https://untitledmanagementsoftware.com/#features">View Features</a></li>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="../#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#how-it-works">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#contact-us">Contact</a></li>
+                    <li class="nav-item nav-cta"><a class="btn btn-ums" role="button" href="../#contact-us">Start organizing</a></li>
                 </ul>
-            </div><button class="btn d-md-none btn-ums" type="button" data-bs-toggle="collapse" data-bs-target="#ums-main-nav"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </nav>
-    <main>
-        <div class="container py-5">
-            <article class="policy-card mx-auto p-4 p-md-5" style="max-width: 760px;">
-                <header class="border-bottom pb-4 mb-4">
-                    <p class="policy-brand mb-2" style="font-weight: 700;">Untitled Management Software</p>
+    <main class="legal-main">
+        <div class="container legal-container">
+            <article class="legal-document">
+                <header class="legal-header">
+                    <p class="policy-brand mb-2">Untitled Management Software</p>
                     <h1 class="mb-3">Terms of Service</h1>
                     <p class="mb-3">Last updated: July 23, 2026</p>
                     <p class="mb-0">These Terms of Service explain the rules for using Untitled Management Software (&quot;UMS&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;), a student productivity app for managing courses, homework, notes, class schedules, and events.</p>
@@ -130,36 +107,39 @@
 
                 <section>
                     <h2 class="h4 mb-3">Contact</h2>
-                    <p class="mb-0">For questions about these Terms, contact us at <a href="mailto:privacy@untitledmanagementsoftware.com" style="font-weight: 700;">privacy@untitledmanagementsoftware.com</a>.</p>
+                    <p class="mb-0">For questions about these Terms, contact us at <a href="mailto:privacy@untitledmanagementsoftware.com">privacy@untitledmanagementsoftware.com.</a></p>
                 </section>
             </article>
         </div>
-        <footer style="background: whitesmoke;">
-            <div class="container">
-                <div class="row g-0 p-3">
-                    <div class="col-12 col-lg-6 p-3">
-                        <h4 class="mb-3" style="color: var(--main-color);font-weight: bold;">Navigation</h4><a class="btn btn-transparent-ums mb-3" role="button" href="https://untitledmanagementsoftware.com/" style="width: 100%;"><i class="fas fa-home me-2"></i>Home</a>
-                    </div>
-                    <div class="col-12 col-lg-6 p-3">
-                        <h4 class="mb-3" style="color: var(--main-color);font-weight: bold;">Legal</h4><a class="btn btn-transparent-ums mb-3" role="button" href="https://untitledmanagementsoftware.com/privacy-policy/" style="width: 100%;"><i class="fas fa-user-lock me-2"></i>Privacy Policy</a><a class="btn btn-transparent-ums" role="button" href="https://untitledmanagementsoftware.com/terms/" style="width: 100%;"><i class="fas fa-file-contract me-2"></i>Terms of Service</a>
-                    </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-5">
+                    <a class="footer-brand" href="../">
+                        <img src="../assets/img/UMS%20Logo.svg" alt="" width="38" height="38" loading="lazy" decoding="async">
+                        <span>Untitled Management Software</span>
+                    </a>
+                    <p class="footer-note"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#graduation-cap"></use></svg><span>The UMS web app is available to registered users after account creation.</span></p>
                 </div>
-                <div class="row g-0">
-                    <div class="col">
-                        <p class="lead" style="text-align: center;color: slategray;">The UMS web app is available to registered users after account creation.</p>
-                    </div>
+                <div class="col-12 col-sm-6 col-lg-3 offset-lg-1">
+                    <h2 class="footer-heading"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#compass"></use></svg> Navigation</h2>
+                    <a class="footer-link" href="../"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#house"></use></svg> Home</a>
+                    <a class="footer-link" href="../#features"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#sparkles"></use></svg> Features</a>
+                    <a class="footer-link" href="../#pricing"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#tags"></use></svg> Pricing</a>
                 </div>
-                <div class="row g-0">
-                    <div class="col">
-                        <p class="lead" style="text-align: center;color: slategray;">Untitled Management Software&nbsp;© 2022<br></p>
-                    </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h2 class="footer-heading"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#scale-balanced"></use></svg> Legal</h2>
+                    <a class="footer-link" href="../privacy-policy/"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#shield-check"></use></svg> Privacy Policy</a>
+                    <a class="footer-link" href="../terms/" aria-current="page"><svg class="icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#file-contract"></use></svg> Terms of Service</a>
                 </div>
             </div>
-        </footer>
-    </main>
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../assets/js/smart-forms.min.js"></script>
+            <div class="footer-bottom">Untitled Management Software © 2022</div>
+        </div>
+    </footer>
+
+    <script defer src="../assets/js/app.js"></script>
 </body>
 
 </html>

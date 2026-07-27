@@ -5,222 +5,280 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Untitled Management Software</title>
-    <meta name="theme-color" content="rgb(248,173,157)">
-    <meta name="description" content="Untitled Management Software helps students manage courses, homework, notes, class schedules, and events, with optional Google Calendar sync.">
-    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/UMS%20Logo.svg">
-    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/UMS%20Logo.svg">
-    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/UMS%20Logo.svg">
-    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/UMS%20Logo.svg">
-    <link rel="icon" type="image/svg+xml" sizes="150x150" href="assets/img/UMS%20Logo.svg">
+    <meta name="theme-color" content="#f8ad9d">
+    <meta name="application-name" content="Untitled Management Software">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="UMS">
+    <meta name="description" content="Untitled Management Software helps students organize courses, assignments, notes, class schedules, events, reminders, Brightspace imports, and optional Google Calendar sync in one place.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/UMS%20Logo.svg">
+    <link rel="apple-touch-icon" href="assets/img/pwa-icon-192.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap"></noscript>
     <link rel="stylesheet" href="assets/css/styles.min.css">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MS9P50S36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8MS9P50S36');
-</script>
 </head>
 
-<body style="font-family: Poppins, sans-serif;">
-    <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean" style="background: whitesmoke;padding: 16px 0;">
-        <div class="container"><a class="navbar-brand d-none d-md-block" href="https://untitledmanagementsoftware.com/" style="color: var(--main-color);">Untitled Management Software</a><a class="navbar-brand d-block d-md-none" href="https://untitledmanagementsoftware.com/" style="color: var(--main-color);">UMS</a>
+<body class="tw-font-sans">
+    <nav class="navbar navbar-light navbar-expand-lg sticky-top navigation-clean" aria-label="Primary navigation">
+        <div class="container site-nav">
+            <a class="navbar-brand brand-lockup" href="https://untitledmanagementsoftware.com/" aria-label="Untitled Management Software home">
+                <img src="assets/img/UMS%20Logo.svg" alt="" width="42" height="42" fetchpriority="high">
+                <span class="d-none d-sm-inline">Untitled Management Software</span>
+                <span class="d-sm-none">UMS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ums-main-nav" aria-controls="ums-main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#bars"></use></svg>
+            </button>
             <div class="collapse navbar-collapse" id="ums-main-nav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item d-flex justify-content-center px-3"><a class="btn btn-ums" role="button" href="#features">Get Started</a></li>
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact-us">Contact</a></li>
+                    <li class="nav-item nav-cta"><a class="btn btn-ums" role="button" href="#contact-us">Start organizing</a></li>
                 </ul>
-            </div><button class="btn d-md-none btn-ums" type="button" data-bs-toggle="collapse" data-bs-target="#ums-main-nav"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </nav>
+
     <main>
-        <div class="container d-flex flex-column" style="padding: 1rem;">
-            <div class="row g-0 flex-grow-1" style="margin-bottom: 1rem;">
-                <div class="col d-flex flex-column justify-content-center align-items-center"><img class="mb-3" src="assets/img/UMS%20Logo.svg" style="height: 5rem;width: 5rem;" alt="UMS Logo">
-                    <h1 class="display-2" style="text-align: center;font-weight: bold;color: var(--main-color);">Built by Stressed Students</h1>
-                    <h1 class="display-2 mb-3" style="text-align: center;font-weight: bold;color: var(--main-color);">For Stressed Students</h1>
-                    <p class="lead" style="color: slategray;text-align: center;">Untitled Management Software helps students manage courses, homework, notes, class schedules, and events in one place.</p>
-                    <p style="color: slategray;text-align: center;max-width: 760px;">UMS can optionally connect to Google Calendar to sync UMS events with your Google Calendar. Google Calendar access is optional and only used for event sync.</p>
-                    <div><a class="btn btn-lg me-3 btn-ums" role="button" href="#features">View Features</a><a class="btn btn-lg btn-transparent-ums" role="button" href="#contact-us">Contact Us</a></div>
-                </div>
-            </div>
-            <div class="row g-0" id="features">
-                <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center" style="padding: 1rem;"><i class="fas fa-toolbox d-flex justify-content-center mb-3 p-4" style="border-radius: 400px;color: var(--utility-danger);background: rgba(235,94,85,0.14);font-size: 48px;width: 98px;height: 98px;"></i>
-                    <h3 class="mb-3" style="color: var(--utility-danger);font-weight: bold;text-align: center;">All-in-One</h3>
-                    <p style="color: slategray;text-align: center;">Bring courses, homework, notes, schedules, and events together in one student-focused application.<br></p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center" style="padding: 1rem;"><i class="fas fa-map-marker-alt d-flex justify-content-center mb-3 p-4" style="border-radius: 400px;color: var(--utility-info);background: rgba(108,145,194,0.14);font-size: 50px;width: 98px;height: 98px;"></i>
-                    <h3 class="mb-3" style="color: var(--utility-info);font-weight: bold;text-align: center;">Easy to Navigate</h3>
-                    <p style="color: slategray;text-align: center;">Students can create an account, add classes, and start tracking schoolwork in minutes.<br></p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center" style="padding: 1rem;"><i class="fas fa-paint-brush d-flex justify-content-center mb-3 p-4" style="border-radius: 400px;color: var(--utility-warning);background: rgba(254,185,95,0.14);font-size: 50px;width: 98px;height: 98px;"></i>
-                    <h3 class="mb-3" style="color: var(--utility-warning);font-weight: bold;text-align: center;">Simple Design</h3>
-                    <p style="color: slategray;text-align: center;">Our simple, pragmatic user interface is designed to help students know where to find assignments, notes, events, and schedules.<br></p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center" style="padding: 1rem;"><i class="fas fa-mobile-alt d-flex justify-content-center mb-3 p-4" style="border-radius: 400px;color: var(--utility-success);background: rgba(92,153,98,0.14);font-size: 50px;width: 98px;height: 98px;"></i>
-                    <h3 class="mb-3" style="color: var(--utility-success);font-weight: bold;text-align: center;">Access on Mobile</h3>
-                    <p style="color: slategray;text-align: center;">UMS has the mobile user in mind and can be accessed on your phone from anywhere.<br></p>
-                </div>
-            </div>
-        </div>
-        <div class="container d-flex flex-column p-3">
-            <div class="d-flex flex-column flex-grow-1">
-                <ul class="nav nav-pills nav-fill d-flex flex-nowrap" role="tablist" style="overflow: auto;white-space: nowrap;">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="pill" href="#tab-1">Dashboard</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="pill" href="#tab-2">Calendar</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="pill" href="#tab-3">Schedule</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="pill" href="#tab-4">Notes</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="pill" href="#tab-5">Homework</a></li>
-                </ul>
-                <div class="tab-content d-flex flex-column flex-grow-1 py-4">
-                    <div class="tab-pane fade show active flex-column flex-grow-1 h-100" role="tabpanel" id="tab-1" style="background: whitesmoke;border-radius: 8px;">
-                        <div class="row g-0 flex-column flex-grow-1 flex-md-row h-100" style="display: flex;">
-                            <div class="col-12 col-lg-7 d-flex flex-column flex-shrink-1 justify-content-center align-items-center p-3">
-                                <div class="d-flex flex-column flex-shrink-1 justify-content-center align-items-center w-100 h-100 p-3" style="border-radius: 8px;background: #fcfcfc;"><img src="assets/img/UMS-Dashboard.svg"></div>
-                            </div>
-                            <div class="col-12 col-lg-5 d-flex flex-column flex-shrink-1 justify-content-center p-3 p-lg-5">
-                                <h1 class="text-center text-md-start" style="font-weight: bold;color: var(--main-color);">Clean, Efficient Dashboard</h1>
-                                <h4 class="text-center text-md-start mb-4" style="font-weight: bold;color: slategray;">Clearly visualize your workload</h4>
-                                <p class="lead text-center text-md-start" style="color: slategray;">With the UMS Dashboard, you will be able to view upcoming assignments and events, late assignments, and your next course for the day.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade flex-column flex-grow-1 h-100" role="tabpanel" id="tab-2" style="background: whitesmoke;border-radius: 1rem;">
-                        <div class="row g-0 flex-column flex-grow-1 flex-md-row h-100" style="display: flex;">
-                            <div class="col-12 col-lg-7 d-flex flex-column flex-shrink-1 justify-content-center align-items-center p-3">
-                                <div class="d-flex flex-column flex-shrink-1 justify-content-center align-items-center w-100 h-100 p-3" style="border-radius: 8px;background: #fcfcfc;"><img src="assets/img/UMS-Calendar.svg"></div>
-                            </div>
-                            <div class="col-12 col-lg-5 d-flex flex-column flex-shrink-1 justify-content-center p-3 p-lg-5">
-                                <h1 class="text-center text-md-start" style="font-weight: bold;color: var(--main-color);">Integrated Calendar</h1>
-                                <h4 class="text-center text-md-start mb-4" style="font-weight: bold;color: slategray;">Organize your month&nbsp;</h4>
-                                <p class="lead text-center text-md-start" style="color: slategray;">With the Calendar feature, assignments, upcoming events, and courses can appear in your UMS calendar. You can optionally connect Google Calendar to sync UMS events with your Google Calendar, and that access is only used for event sync.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade flex-column flex-grow-1 h-100" role="tabpanel" id="tab-3" style="background: whitesmoke;border-radius: 8px;">
-                        <div class="row g-0 flex-column flex-grow-1 flex-md-row h-100" style="display: flex;">
-                            <div class="col-12 col-lg-7 d-flex flex-column flex-shrink-1 justify-content-center align-items-center p-3">
-                                <div class="d-flex flex-column flex-shrink-1 justify-content-center align-items-center w-100 h-100 p-3" style="border-radius: 8px;background: #fcfcfc;"><img src="assets/img/UMS-Schedule.svg"></div>
-                            </div>
-                            <div class="col-12 col-lg-5 d-flex flex-column flex-shrink-1 justify-content-center p-3 p-lg-5">
-                                <h1 class="text-center text-md-start" style="font-weight: bold;color: var(--main-color);">Course Schedule</h1>
-                                <h4 class="text-center text-md-start mb-4" style="font-weight: bold;color: slategray;">Map out your courses for the week</h4>
-                                <p class="lead text-center text-md-start" style="color: slategray;">With the schedule feature, you will be able to see your classes for the week along with their location on campus. You can even link directly to Zoom if the class is online!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade flex-column flex-grow-1 h-100" role="tabpanel" id="tab-4" style="background: whitesmoke;border-radius: 8px;">
-                        <div class="row g-0 flex-column flex-grow-1 flex-md-row h-100" style="display: flex;">
-                            <div class="col-12 col-lg-7 d-flex flex-column flex-shrink-1 justify-content-center align-items-center p-3">
-                                <div class="d-flex flex-column flex-shrink-1 justify-content-center align-items-center w-100 h-100 p-3" style="border-radius: 8px;background: #fcfcfc;"><img src="assets/img/UMS-Notes.svg"></div>
-                            </div>
-                            <div class="col-12 col-lg-5 d-flex flex-column flex-shrink-1 justify-content-center p-3 p-lg-5">
-                                <h1 class="text-center text-md-start" style="font-weight: bold;color: var(--main-color);">Keep Track of Notes</h1>
-                                <h4 class="text-center text-md-start mb-4" style="font-weight: bold;color: slategray;">Take better notes, faster<br></h4>
-                                <p class="lead text-center text-md-start" style="color: slategray;">UMS lets you create notes, which can include text, images, audio, and web clippings. You can organize your notes by course, and access them from any device.<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade flex-column flex-grow-1 h-100" role="tabpanel" id="tab-5" style="background: whitesmoke;border-radius: 8px;">
-                        <div class="row g-0 flex-column flex-grow-1 flex-md-row h-100" style="display: flex;">
-                            <div class="col-12 col-lg-7 d-flex flex-column flex-shrink-1 justify-content-center align-items-center p-3">
-                                <div class="d-flex flex-column flex-shrink-1 justify-content-center align-items-center w-100 h-100 p-3" style="border-radius: 8px;background: #fcfcfc;"><img src="assets/img/UMS-Homework.svg"></div>
-                            </div>
-                            <div class="col-12 col-lg-5 d-flex flex-column flex-shrink-1 justify-content-center p-3 p-lg-5">
-                                <h1 class="text-center text-md-start" style="font-weight: bold;color: var(--main-color);">Organize Your Assignments</h1>
-                                <h4 class="text-center text-md-start mb-4" style="font-weight: bold;color: slategray;">Never miss a due date</h4>
-                                <p class="lead text-center text-md-start" style="color: slategray;">With the homework feature, you can be reminded of upcoming assignments and even get daily alerts to help progress on reading assignments.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container d-flex flex-column p-3">
-            <div class="row g-0" id="pricing">
-                <div class="col p-3" style="border-radius: 1rem;background: whitesmoke;">
-                    <h1 class="display-5 m-0" style="font-weight: bold;color: var(--main-color);text-align: center;">Pricing</h1>
-                </div>
-            </div>
-            <div class="row flex-grow-1 mb-3">
-                <div class="col p-3">
-                    <div class="d-flex flex-column h-100 w-100 p-3" style="border-radius: 1rem;background: whitesmoke;">
-                        <div class="row g-0">
-                            <div class="col p-3">
-                                <h1 class="mb-0" style="font-weight: bold;color: var(--main-color);">$6.00<span class="h4 ms-2" style="font-weight: bold;color: slategray;">/month</span></h1>
-                            </div>
-                        </div>
-                        <div class="row g-0 flex-grow-1">
-                            <div class="col p-3">
-                                <p class="lead m-0" style="color: slategray;">With this subscription, you get full access to Untitled Management Software. You may cancel at any time and you will have access until your usage cycle expires. Create an account first, then manage billing from inside the app.</p>
-                            </div>
-                        </div>
-                        <div class="row g-0">
-                            <div class="col p-3"><a class="btn btn-lg btn-ums w-100" role="button" href="#contact-us">Contact Us</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-3">
-                    <div class="d-flex flex-column h-100 w-100 p-3" style="border-radius: 1rem;background: whitesmoke;">
-                        <div class="row g-0">
-                            <div class="col p-3">
-                                <h1 class="mb-0" style="font-weight: bold;color: var(--main-color);">$60.00<span class="h4 ms-2" style="font-weight: bold;color: slategray;">/year</span></h1>
-                            </div>
-                            <div class="col-12 col-sm-auto col-md-12 col-lg-auto d-flex flex-column justify-content-center align-items-center p-3"><span class="badge bg-light" style="color: var(--bs-success);background: rgba(25,135,84,0.14) !important;font-size: 16px;">15% Discount</span></div>
-                        </div>
-                        <div class="row g-0 flex-grow-1">
-                            <div class="col p-3">
-                                <p class="lead m-0" style="color: slategray;">With this subscription, you get full access to Untitled Management Software. You may cancel at any time and you will have access until your usage cycle expires. Create an account first, then manage billing from inside the app.</p>
-                            </div>
-                        </div>
-                        <div class="row g-0">
-                            <div class="col p-3"><a class="btn btn-lg btn-ums w-100" role="button" href="#contact-us">Contact Us</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-0 mb-3" id="contact-us">
-                <div class="col p-3" style="border-radius: 1rem;background: whitesmoke;">
-                    <h1 class="display-5 m-0" style="font-weight: bold;color: var(--main-color);text-align: center;">Contact Us</h1>
-                </div>
-            </div>
-            <form class="p-3" style="border-radius: 1rem;background: whitesmoke;" data-bss-recipient="e2d66422084fd2956a657b2de8665da9"><input class="form-control form-control-lg mb-3" type="text" name="subject" placeholder="Subject" style="border-style: none;border-radius: 8px;color: slategray;"><textarea class="form-control form-control-lg mb-3" style="border-radius: 8px;border-style: none;color: slategray;" rows="6" name="message" placeholder="Message"></textarea>
-                <div class="row">
-                    <div class="col d-flex justify-content-end"><button class="btn btn-success btn-lg w-100" type="submit" style="border-radius: 8px;">Submit</button></div>
-                </div>
-            </form>
-        </div>
-        <footer style="background: whitesmoke;">
+        <section class="hero-section">
             <div class="container">
-                <div class="row g-0 p-3">
-                    <div class="col-12 col-lg-6 p-3">
-                        <h4 class="mb-3" style="color: var(--main-color);font-weight: bold;">Navigation</h4><a class="btn btn-transparent-ums mb-3" role="button" href="https://untitledmanagementsoftware.com/" style="width: 100%;"><i class="fas fa-home me-2"></i>Home</a>
+                <div class="row align-items-center g-5">
+                    <div class="col-12 col-xl-5 hero-copy-column">
+                        <div class="eyebrow"><span>All-in-one student workspace</span></div>
+                        <h1>Your semester, finally in one place.</h1>
+                        <p class="hero-copy">Track classes, assignments, notes, schedules, events, reminders, and imports without bouncing between school portals, syllabi, and scattered tabs.</p>
+                        <div class="hero-actions">
+                            <a class="btn btn-lg btn-ums" role="button" href="#contact-us">Start organizing</a>
+                            <a class="btn btn-lg btn-transparent-ums" role="button" href="#how-it-works"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#circle-play"></use></svg> See how it works</a>
+                        </div>
+                        <a class="import-callout" href="#how-it-works">
+                            <span class="callout-icon"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#file-pdf"></use></svg></span>
+                            <span>Brightspace PDF import</span>
+                            <strong>Included</strong>
+                        </a>
+                        <p class="trust-line"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#shield-check"></use></svg> Built for students juggling packed weeks, shifting due dates, and class details.</p>
                     </div>
-                    <div class="col-12 col-lg-6 p-3">
-                        <h4 class="mb-3" style="color: var(--main-color);font-weight: bold;">Legal</h4><a class="btn btn-transparent-ums mb-3" role="button" href="https://untitledmanagementsoftware.com/privacy-policy/" style="width: 100%;"><i class="fas fa-user-lock me-2"></i>Privacy Policy</a><a class="btn btn-transparent-ums" role="button" href="https://untitledmanagementsoftware.com/terms/" style="width: 100%;"><i class="fas fa-file-contract me-2"></i>Terms of Service</a>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col">
-                        <p class="lead" style="text-align: center;color: slategray;">The UMS web app is available to registered users after account creation.</p>
-                    </div>
-                </div>
-                <div class="row g-0">
-                    <div class="col">
-                        <p class="lead" style="text-align: center;color: slategray;">Untitled Management Software&nbsp;© 2022<br></p>
+                    <div class="col-12 col-xl-7 hero-mockup-column">
+                        <div class="product-stage" aria-label="UMS app preview">
+                            <img class="desktop-mockup" src="assets/img/ums-app-dashboard-desktop.svg" alt="Simplified UMS desktop dashboard showing assignments, classes, late work, and events" width="1600" height="960" fetchpriority="high" decoding="async">
+                            <img class="mobile-mockup" src="assets/img/ums-app-dashboard-mobile.svg" alt="Simplified UMS mobile dashboard showing daily summaries and navigation" width="430" height="930" decoding="async">
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </section>
+
+        <section class="feature-strip" id="features" aria-label="UMS feature highlights">
+            <div class="container">
+                <div class="feature-strip-grid">
+                    <article>
+                        <span class="feature-icon danger"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#calendar-check"></use></svg></span>
+                        <h2>Know what's due next</h2>
+                        <p>See assignments and events in one place so nothing slips through the cracks.</p>
+                    </article>
+                    <article>
+                        <span class="feature-icon info"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#clock"></use></svg></span>
+                        <h2>See classes together</h2>
+                        <p>Check today's classes, weekly schedules, locations, and course details fast.</p>
+                    </article>
+                    <article>
+                        <span class="feature-icon warning"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#note-sticky"></use></svg></span>
+                        <h2>Keep notes tied to courses</h2>
+                        <p>Organize notes, images, audio, and web clippings by class.</p>
+                    </article>
+                    <article>
+                        <span class="feature-icon success"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#cloud-arrow-up"></use></svg></span>
+                        <h2>Import school data</h2>
+                        <p>Bring Brightspace calendar or PDF data into UMS and reduce manual setup.</p>
+                    </article>
+                    <article>
+                        <span class="feature-icon primary"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#mobile-screen-button"></use></svg></span>
+                        <h2>Plan from any device</h2>
+                        <p>Stay organized on your laptop or on the go from your phone.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">What UMS brings together</span>
+                    <h2>The app view your school portal never gives you.</h2>
+                    <p>UMS turns classes, assignments, notes, schedules, and calendar details into a single student-first workspace.</p>
+                </div>
+                <div class="showcase-grid">
+                    <article class="showcase-card dashboard-card">
+                        <div class="showcase-copy">
+                            <span class="section-kicker">Dashboard</span>
+                            <h3>Start each day with the work that matters.</h3>
+                            <p>See upcoming assignments, late work, events, and your next class without hunting through separate screens.</p>
+                        </div>
+                        <img class="app-view-shot" src="assets/img/ums-abstract-dashboard.svg" alt="Simplified UMS dashboard with assignments, classes, late work, and upcoming events" width="1440" height="838" loading="lazy" decoding="async">
+                    </article>
+                    <article class="showcase-card">
+                        <div class="showcase-copy">
+                            <span class="section-kicker">Calendar</span>
+                            <h3>Put deadlines and events on the same calendar.</h3>
+                            <p>Assignments, upcoming events, and courses can appear in UMS. Optional Google Calendar sync is available when you choose to connect it.</p>
+                        </div>
+                        <img class="app-view-shot" src="assets/img/ums-abstract-calendar.svg" alt="Simplified UMS monthly calendar with assignments and events" width="1440" height="838" loading="lazy" decoding="async">
+                    </article>
+                    <article class="showcase-card">
+                        <div class="showcase-copy">
+                            <span class="section-kicker">Schedule</span>
+                            <h3>Keep the week readable.</h3>
+                            <p>Class times, locations, online links, and recurring sessions stay organized around your actual course schedule.</p>
+                        </div>
+                        <img class="app-view-shot" src="assets/img/ums-abstract-schedule.svg" alt="Simplified UMS weekly class schedule" width="1440" height="838" loading="lazy" decoding="async">
+                    </article>
+                    <article class="showcase-card homework-card">
+                        <div class="showcase-copy">
+                            <span class="section-kicker">Homework</span>
+                            <h3>Track assignments before they turn into late work.</h3>
+                            <p>UMS helps you watch what is due soon, what is late, and what still needs attention.</p>
+                        </div>
+                        <img class="app-view-shot" src="assets/img/ums-abstract-homework.svg" alt="Simplified UMS homework view with assignment status" width="1440" height="838" loading="lazy" decoding="async">
+                    </article>
+                    <article class="showcase-card notes-card">
+                        <div class="showcase-copy">
+                            <span class="section-kicker">Notes</span>
+                            <h3>Keep class context with your notes.</h3>
+                            <p>Create course-connected notes with text, images, audio, and web clippings so studying starts from the right place.</p>
+                        </div>
+                        <img class="app-view-shot" src="assets/img/ums-abstract-notes.svg" alt="Simplified UMS notes view with search and course-connected notes" width="1440" height="838" loading="lazy" decoding="async">
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section" id="how-it-works">
+            <div class="container">
+                <div class="workflow-panel">
+                    <div class="workflow-intro">
+                        <span class="eyebrow">Brightspace PDF import</span>
+                        <h2>Import once. Get organized.</h2>
+                        <p>Export school calendar data from Brightspace, import it into UMS, and spend less time rebuilding the semester by hand.</p>
+                        <ul>
+                            <li><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#check"></use></svg> Less manual entry</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#check"></use></svg> Fewer missed details</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#check"></use></svg> Course context preserved</li>
+                        </ul>
+                    </div>
+                    <div class="workflow-steps">
+                        <article>
+                            <span>1</span>
+                            <svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#file-pdf"></use></svg>
+                            <h3>Export PDF</h3>
+                            <p>Save your Brightspace calendar or course data.</p>
+                        </article>
+                        <article>
+                            <span>2</span>
+                            <svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#cloud-arrow-up"></use></svg>
+                            <h3>Import to UMS</h3>
+                            <p>Upload the file and let UMS sort the semester.</p>
+                        </article>
+                        <article>
+                            <span>3</span>
+                            <svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#layer-group"></use></svg>
+                            <h3>Build your workspace</h3>
+                            <p>Courses, assignments, deadlines, events, and schedules come together.</p>
+                        </article>
+                        <article>
+                            <span>4</span>
+                            <svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#circle-check"></use></svg>
+                            <h3>Stay organized</h3>
+                            <p>Review what is due, where to be, and what needs attention.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Pricing</span>
+                    <h2>Simple plans for the full UMS workspace.</h2>
+                    <p>Create an account first, then manage billing from inside the app. You can cancel any time.</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <div>
+                            <span class="plan-label"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#calendar-day"></use></svg> Monthly</span>
+                            <h3>$6.00<span>/month</span></h3>
+                            <p>Full access to Untitled Management Software for students who want monthly flexibility.</p>
+                        </div>
+                        <a class="btn btn-lg btn-ums" role="button" href="#contact-us">Contact Us</a>
+                    </article>
+                    <article class="pricing-card featured-plan">
+                        <div>
+                            <div class="plan-topline">
+                                <span class="plan-label"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#calendar-days"></use></svg> Yearly</span>
+                                <strong>15% Discount</strong>
+                            </div>
+                            <h3>$60.00<span>/year</span></h3>
+                            <p>Full access with annual billing for students who already know they want the semester handled.</p>
+                        </div>
+                        <a class="btn btn-lg btn-ums" role="button" href="#contact-us">Contact Us</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact-us">
+            <div class="container">
+                <div class="contact-panel">
+                    <div class="contact-copy">
+                        <span class="eyebrow eyebrow-with-icon"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#envelope"></use></svg> Contact Us</span>
+                        <h2>Ready to organize your semester?</h2>
+                        <p>Send a quick note and we will help you get started with Untitled Management Software.</p>
+                    </div>
+                    <form class="contact-form" data-bss-recipient="e2d66422084fd2956a657b2de8665da9">
+                        <label class="visually-hidden" for="subject">Subject</label>
+                        <input class="form-control form-control-lg" id="subject" type="text" name="subject" placeholder="Subject">
+                        <label class="visually-hidden" for="message">Message</label>
+                        <textarea class="form-control form-control-lg" id="message" rows="6" name="message" placeholder="Message"></textarea>
+                        <button class="btn btn-lg btn-ums" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/smart-forms.min.js"></script>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-5">
+                    <a class="footer-brand" href="https://untitledmanagementsoftware.com/">
+                        <img src="assets/img/UMS%20Logo.svg" alt="" width="38" height="38" loading="lazy" decoding="async">
+                        <span>Untitled Management Software</span>
+                    </a>
+                    <p class="footer-note"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#graduation-cap"></use></svg><span>The UMS web app is available to registered users after account creation.</span></p>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 offset-lg-1">
+                    <h2 class="footer-heading"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#compass"></use></svg> Navigation</h2>
+                    <a class="footer-link" href="https://untitledmanagementsoftware.com/"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#house"></use></svg> Home</a>
+                    <a class="footer-link" href="#features"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#sparkles"></use></svg> Features</a>
+                    <a class="footer-link" href="#pricing"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#tags"></use></svg> Pricing</a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h2 class="footer-heading"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#scale-balanced"></use></svg> Legal</h2>
+                    <a class="footer-link" href="privacy-policy/"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#shield-check"></use></svg> Privacy Policy</a>
+                    <a class="footer-link" href="terms/"><svg class="icon" aria-hidden="true"><use href="assets/img/fontawesome-pro.svg#file-contract"></use></svg> Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">Untitled Management Software © 2022</div>
+        </div>
+    </footer>
+
+    <script defer src="assets/js/app.js"></script>
 </body>
 
 </html>

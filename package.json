@@ -1,0 +1,14 @@
+{
+  "name": "ums-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:icons": "node scripts/generate-fontawesome-sprite.js",
+    "build:mockups": "node scripts/generate-device-mockups.js",
+    "build:css": "tailwindcss -c tailwind.config.js -i ./assets/css/tailwind.css -o ./assets/css/styles.min.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i ./assets/css/tailwind.css -o ./assets/css/styles.min.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

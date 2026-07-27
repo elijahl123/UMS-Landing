@@ -1,1 +1,50 @@
-{"short_name":"UMS","name":"Untitled Management Software","icons":[{"src":"https://untitledmanagementsoftware.com/assets/img/UMS%20Logo.svg","type":"image/svg+xml","sizes":"150x150"},{"src":"https://untitledmanagementsoftware.com/assets/img/UMS%20Logo.svg","type":"image/svg+xml","sizes":"150x150"}],"start_url":"https://untitledmanagementsoftware.com/","background_color":"#ffffff","theme_color":"rgb(248,173,157)","display":"fullscreen","orientation":"landscape"}
+{
+  "id": "./",
+  "name": "Untitled Management Software",
+  "short_name": "UMS",
+  "description": "Courses, assignments, notes, schedules, and events in one student workspace.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f7f7",
+  "theme_color": "#f8ad9d",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "assets/img/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/pwa-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Features",
+      "short_name": "Features",
+      "url": "./#features"
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Pricing",
+      "url": "./#pricing"
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "url": "./#contact-us"
+    }
+  ]
+}
