@@ -25,6 +25,14 @@ The landing page is installable and available offline through `manifest.json` an
 
 The page defers analytics and form enhancement and lazy-loads below-the-fold mockups.
 
+## Production build
+
+DigitalOcean App Platform deploys the generated static site from `dist/`.
+
+- Run `npm run build` to regenerate assets and assemble the production directory.
+- `npm ci` also runs the production build through `postinstall`, matching the DigitalOcean buildpack flow.
+- Keep source-only files and licensed icon inputs outside `dist/`.
+
 ## Font Awesome Pro
 
 The landing page uses a project-specific SVG sprite generated from the vendored Font Awesome Pro 7.3.1 Regular icons in `assets/vendor/fontawesome-pro/`.

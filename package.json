@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "npm run build:icons && npm run build:mockups && npm run build:css && node scripts/build-static-site.js",
     "build:icons": "node scripts/generate-fontawesome-sprite.js",
     "build:mockups": "node scripts/generate-device-mockups.js",
     "build:css": "tailwindcss -c tailwind.config.js -i ./assets/css/tailwind.css -o ./assets/css/styles.min.css --minify",
+    "postinstall": "npm run build",
     "watch:css": "tailwindcss -c tailwind.config.js -i ./assets/css/tailwind.css -o ./assets/css/styles.min.css --watch"
   },
   "devDependencies": {
