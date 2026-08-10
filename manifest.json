@@ -1,1 +1,24 @@
-{"short_name":"UMS","name":"Untitled Management Software","icons":[{"src":"https://untitledmanagementsoftware.com/assets/img/UMS%20Logo.svg","type":"image/svg+xml","sizes":"150x150"},{"src":"https://untitledmanagementsoftware.com/assets/img/UMS%20Logo.svg","type":"image/svg+xml","sizes":"150x150"}],"start_url":"https://untitledmanagementsoftware.com/","background_color":"#ffffff","theme_color":"rgb(248,173,157)","display":"fullscreen","orientation":"landscape"}
+{
+  "id": "/",
+  "name": "Untitled Management Software",
+  "short_name": "UMS",
+  "description": "Courses, assignments, notes, schedules, and events in one student workspace.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f8fa",
+  "theme_color": "#f8ad9d",
+  "categories": ["education", "productivity"],
+  "icons": [{
+    "src": "/assets/img/UMS%20Logo.svg",
+    "sizes": "150x150",
+    "type": "image/svg+xml",
+    "purpose": "any"
+  }],
+  "shortcuts": [{
+    "name": "UCD launch",
+    "short_name": "UCD",
+    "url": "/ucd/"
+  }]
+}
