@@ -7,13 +7,18 @@ const files = [
   'index.html',
   'manifest.json',
   'offline.html',
+  'sitemap.xml',
   'sw.js',
   'privacy-policy',
   'terms',
+  'ucd',
   'assets/bootstrap/css/bootstrap.min.css',
+  'assets/bootstrap/js/bootstrap.min.js',
+  'assets/css/launch.css',
   'assets/css/styles.min.css',
   'assets/img',
   'assets/js/app.js',
+  'assets/js/landing.js',
   'assets/js/smart-forms.min.js'
 ];
 

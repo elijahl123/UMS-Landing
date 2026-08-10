@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ums-landing-v10-app-style';
+const CACHE_NAME = 'ums-landing-v11-svg-icons';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -10,9 +10,8 @@ const APP_SHELL = [
   '/manifest.json',
   '/assets/bootstrap/css/bootstrap.min.css',
   '/assets/bootstrap/js/bootstrap.min.js',
-  '/assets/fonts/fontawesome-all.min.css',
-  '/assets/css/launch.css?v=20260810-appstyle',
-  '/assets/js/landing.js?v=20260810-appstyle',
+  '/assets/css/launch.css?v=20260810-svgicons',
+  '/assets/js/landing.js?v=20260810-svgicons',
   '/assets/img/UMS%20Logo.svg',
   '/assets/img/UMS-Dashboard.svg'
 ];
