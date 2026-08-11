@@ -8,19 +8,25 @@ const c = {
   coralStrong: '#f08080',
   coralShade: '#f4978e',
   ink: '#56494c',
-  muted: '#9a9295',
+  text: '#2f2f2f',
+  muted: '#5a5a5a',
   line: '#e8e8e8',
   canvas: '#f7f7f7',
   white: '#ffffff',
-  mint: '#eaf6f1',
-  green: '#9fd0b6',
-  blue: '#e7eefb',
-  blueStrong: '#9bb6e7',
-  yellow: '#fff5d8',
-  yellowStrong: '#d8bf7b',
-  pink: '#fff0ed',
-  purple: '#f0eafa',
-  purpleStrong: '#b49cdd',
+  mint: '#cfe8da',
+  green: '#9ecbb0',
+  blue: '#c9d8f3',
+  blueStrong: '#9fb6e6',
+  yellow: '#f8e7af',
+  yellowStrong: '#e0c874',
+  teal: '#bfe6e1',
+  tealStrong: '#7fc5bd',
+  pink: '#f5cddd',
+  pinkStrong: '#dc9ab8',
+  purple: '#ded2f4',
+  purpleStrong: '#b8a2df',
+  red: '#f7c7c7',
+  redStrong: '#df8d8d',
 };
 
 const courses = [
@@ -66,26 +72,29 @@ function sidebar(active = 0) {
   const nav = Array.from({ length: 6 }, (_, index) => {
     const y = 108 + index * 62;
     const selected = index === active;
-    return `${selected ? rect(18, y - 25, 194, 44, c.pink, 'none', 8) : ''}
-      <circle cx="43" cy="${y - 3}" r="8" fill="${selected ? c.coralStrong : c.muted}" opacity="${selected ? 1 : 0.72}"/>
-      ${bar(68, y - 9, 76 + (index % 3) * 18, 12, selected ? c.coral : c.line, 6)}`;
+    return `${rect(14, y - 27, 202, 46, selected ? c.pink : '#fbe9e5', 'none', 8, `opacity="${selected ? 0.92 : 0.54}"`)}
+      <g transform="translate(32 ${y - 14})" fill="none" stroke="${c.coralStrong}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="${selected ? 1 : 0.8}">
+        <rect x="0" y="0" width="20" height="20" rx="5"/>
+        <path d="M5 10h10M10 5v10" opacity="${index === 0 ? 1 : 0.48}"/>
+      </g>
+      ${bar(68, y - 10, 80 + (index % 3) * 16, 12, c.coralStrong, 6, selected ? 1 : 0.78)}`;
   }).join('');
 
   return `<rect width="230" height="838" fill="${c.canvas}"/>
-  <line x1="230" y1="0" x2="230" y2="838" stroke="${c.line}"/>
+  <line x1="229" y1="0" x2="229" y2="838" stroke="${c.line}" stroke-width="2"/>
   <circle cx="43" cy="42" r="24" fill="${c.coral}"/>
   <circle cx="43" cy="42" r="10" fill="${c.white}"/>
-  ${bar(78, 32, 76, 20, c.coral, 8)}
+  ${bar(78, 32, 64, 20, c.coral, 8)}
   ${nav}
   <line x1="20" y1="496" x2="210" y2="496" stroke="${c.line}"/>
-  ${rect(20, 526, 190, 90, c.white, c.line, 10)}
+  ${rect(20, 526, 190, 90, c.white, c.coral, 10, 'stroke-width="2"')}
   ${iconTile(34, 541, c.blue, c.blueStrong, 30)}
-  ${bar(76, 542, 68, 9, c.muted)}
-  ${bar(76, 560, 112, 8, c.ink, 4, 0.75)}
-  ${bar(76, 578, 88, 7, c.line)}
+  ${bar(76, 542, 68, 9, c.coralStrong)}
+  ${bar(76, 560, 112, 8, c.ink, 4, 0.82)}
+  ${bar(76, 578, 88, 7, c.muted, 4, 0.45)}
   ${dot(48, 782, 18, c.pink)}
-  ${bar(78, 767, 92, 10, c.ink, 5, 0.75)}
-  ${bar(78, 787, 116, 8, c.line)}`;
+  ${bar(78, 767, 92, 10, c.ink, 5, 0.82)}
+  ${bar(78, 787, 116, 8, c.muted, 4, 0.38)}`;
 }
 
 function topbar() {
@@ -124,31 +133,71 @@ function emptyState(x, y, width, height) {
 }
 
 function dashboardContent() {
-  const cards = [
-    [256, 100, 554, 322, 0],
-    [830, 100, 554, 322, 1],
-    [256, 442, 554, 322, 2],
-    [830, 442, 554, 322, 3],
-  ];
+  const studyX = 256;
+  const studyY = 24;
+  const studyW = 1128;
+  const studyH = 276;
 
-  return cards.map(([x, y, width, height], cardIndex) => {
-    const insideX = x + 20;
-    const insideY = y + 72;
-    const insideW = width - 40;
-    return `${rect(x, y, width, height, c.white, c.coral, 12)}
-      ${cardHeader(x, y, width)}
-      ${cardIndex === 2
-        ? emptyState(insideX, insideY, insideW, 224)
-        : [0, 1, 2].slice(0, cardIndex === 1 ? 2 : 3).map((_, rowIndex) =>
-          courseRow(insideX, insideY + rowIndex * 70, insideW, 56, cardIndex + rowIndex),
-        ).join('')}`;
+  const taskGroups = [
+    [284, 112, 650, 72, 1],
+    [284, 194, 650, 72, 2],
+  ].map(([x, y, width, height, courseIndex]) => {
+    const [fill, accent] = courses[courseIndex];
+    return `${rect(x, y, width, height, c.white, accent, 8)}
+      <rect x="${x}" y="${y}" width="${width}" height="28" rx="7" fill="${fill}"/>
+      ${bar(x + 14, y + 9, 116, 10, c.ink, 5, 0.82)}
+      ${bar(x + width - 122, y + 10, 98, 8, accent, 4, 0.92)}
+      <circle cx="${x + 24}" cy="${y + 50}" r="11" fill="${c.white}" stroke="${accent}" stroke-width="2"/>
+      ${check(x + 18, y + 45, .62, accent)}
+      ${bar(x + 48, y + 44, width * .42, 10, c.ink, 5, .76)}
+      ${bar(x + width - 92, y + 46, 64, 7, accent, 4, .8)}`;
   }).join('');
+
+  const examRows = [
+    [974, 118, 378, 62, 3],
+    [974, 190, 378, 62, 0],
+  ].map(([x, y, width, height, courseIndex], index) => {
+    const [fill, accent] = courses[courseIndex];
+    return `${rect(x, y, width, height, fill, accent, 8)}
+      <rect x="${x}" y="${y}" width="5" height="${height}" rx="2.5" fill="${accent}"/>
+      ${bar(x + 20, y + 14, 132 + index * 22, 10, c.ink, 5, .78)}
+      ${bar(x + 20, y + 36, 82, 7, accent, 4, .9)}
+      ${bar(x + width - 62, y + 24, 36, 12, accent, 6, .86)}`;
+  }).join('');
+
+  const widgets = [
+    [256, 320, 554, 238, 0, 3],
+    [830, 320, 554, 238, 2, 2],
+    [256, 578, 554, 236, 4, 2],
+    [830, 578, 554, 236, 1, 3],
+  ].map(([x, y, width, height, startCourse, rows], widgetIndex) => `${rect(x, y, width, height, c.white, c.coral, 10, 'stroke-width="2"')}
+    <circle cx="${x + 38}" cy="${y + 34}" r="17" fill="${c.pink}"/>
+    <path d="M${x + 30} ${y + 34}h16M${x + 38} ${y + 26}v16" fill="none" stroke="${c.coralStrong}" stroke-width="3" stroke-linecap="round" opacity="${widgetIndex === 1 ? .45 : 1}"/>
+    ${bar(x + 68, y + 27, 166 - widgetIndex * 8, 13, c.coralStrong, 7)}
+    ${bar(x + width - 72, y + 29, 42, 8, c.coral, 4)}
+    ${Array.from({ length: rows }, (_, rowIndex) =>
+      courseRow(x + 20, y + 68 + rowIndex * 52, width - 40, 42, startCourse + rowIndex, true),
+    ).join('')}
+    ${rows === 2 ? rect(x + 20, y + 178, width - 40, 38, c.canvas, c.line, 8) : ''}
+    ${rows === 2 ? bar(x + width / 2 - 38, y + 193, 76, 7, c.muted, 4, .46) : ''}`).join('');
+
+  return `${rect(studyX, studyY, studyW, studyH, c.white, c.coral, 10, 'stroke-width="2"')}
+    <circle cx="292" cy="64" r="20" fill="${c.pink}"/>
+    <path d="M284 64h16M292 56v16" fill="none" stroke="${c.coralStrong}" stroke-width="3" stroke-linecap="round"/>
+    ${bar(326, 54, 156, 16, c.coralStrong, 8)}
+    ${rect(1264, 48, 82, 30, c.pink, 'none', 7)}
+    ${bar(1283, 59, 44, 8, c.coralStrong, 4)}
+    ${bar(284, 91, 118, 9, c.coralStrong, 5)}
+    ${bar(974, 91, 132, 9, c.coralStrong, 5)}
+    <line x1="952" y1="100" x2="952" y2="272" stroke="${c.line}" stroke-width="2"/>
+    ${taskGroups}
+    ${examRows}
+    ${widgets}`;
 }
 
 function desktopDashboard() {
   return `<rect width="1440" height="838" fill="${c.canvas}"/>
   ${sidebar(0)}
-  ${topbar()}
   ${dashboardContent()}`;
 }
 
@@ -306,8 +355,7 @@ function notesContent() {
 function appScene(title, description, active, content) {
   return svg(title, description, '0 0 1440 838', `<rect width="1440" height="838" fill="${c.canvas}"/>
   ${sidebar(active)}
-  ${topbar()}
-  ${content}`);
+  <g transform="translate(0 -58)">${content}</g>`);
 }
 
 const desktopDevice = svg(
@@ -340,6 +388,12 @@ const mobileDevice = svg(
 );
 
 const assets = {
+  'UMS-Dashboard.svg': svg(
+    'Current UMS dashboard',
+    'A refined representation of the current UMS dashboard with Study Focus, grouped tasks, upcoming exams, and four course widgets.',
+    '0 0 1440 838',
+    desktopDashboard(),
+  ),
   'ums-app-dashboard-desktop.svg': desktopDevice,
   'ums-app-dashboard-mobile.svg': mobileDevice,
   'ums-abstract-dashboard.svg': svg(
@@ -375,7 +429,7 @@ const assets = {
 };
 
 Object.entries(assets).forEach(([filename, contents]) => {
-  fs.writeFileSync(path.join(imageDir, filename), contents);
+  fs.writeFileSync(path.join(imageDir, filename), contents.replace(/[ \t]+$/gm, ''));
 });
 
 console.log(`Generated ${Object.keys(assets).length} text-free UMS SVG mockups.`);

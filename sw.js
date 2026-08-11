@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ums-landing-v11-svg-icons';
+const CACHE_NAME = 'ums-landing-v26-supplied-campus';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -10,10 +10,12 @@ const APP_SHELL = [
   '/manifest.json',
   '/assets/bootstrap/css/bootstrap.min.css',
   '/assets/bootstrap/js/bootstrap.min.js',
-  '/assets/css/launch.css?v=20260810-svgicons',
-  '/assets/js/landing.js?v=20260810-svgicons',
+  '/assets/css/launch.css?v=20260810-responsive-hero-v8',
+  '/assets/js/landing.js?v=20260810-ucd-launch',
   '/assets/img/UMS%20Logo.svg',
-  '/assets/img/UMS-Dashboard.svg'
+  '/assets/img/UMS-Dashboard.svg?v=20260810-current-dashboard',
+  '/assets/img/ucd-belfield-hero-wide.svg?v=20260811-supplied-campus-v6',
+  '/assets/img/ucd-campus-skyline.svg'
 ];
 
 self.addEventListener('install', (event) => {

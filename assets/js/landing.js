@@ -3,8 +3,26 @@
 
   const isUcdPage = document.body.dataset.page === 'ucd';
   const attributionKeys = ['campaign', 'ambassador', 'society', 'referral'];
-  const allowedValue = /[^a-zA-Z0-9._-]/g;
+  const allowedValue = /^[A-Za-z0-9._-]{1,64}$/;
   const API_ORIGIN = 'https://app.untitledmanagementsoftware.com';
+  const launchSessionKey = 'ums_ucd_launch_session';
+
+  function randomSessionId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID().replaceAll('-', '');
+    }
+    const bytes = new Uint8Array(16);
+    window.crypto.getRandomValues(bytes);
+    return Array.from(bytes, (value) => value.toString(16).padStart(2, '0')).join('');
+  }
+
+  function launchSession() {
+    const current = sessionStorage.getItem(launchSessionKey);
+    if (current && allowedValue.test(current)) return current;
+    const created = randomSessionId();
+    sessionStorage.setItem(launchSessionKey, created);
+    return created;
+  }
 
   function readAttribution() {
     const params = new URLSearchParams(window.location.search);
@@ -12,16 +30,21 @@
     attributionKeys.forEach((key) => {
       const raw = params.get(key);
       if (!raw) return;
-      const value = raw.replace(allowedValue, '').slice(0, 64);
-      if (value) attribution[key] = value;
+      const value = raw.trim();
+      if (allowedValue.test(value)) attribution[key] = value;
     });
     return attribution;
   }
 
   const attribution = readAttribution();
+  const sessionId = isUcdPage ? launchSession() : null;
 
   function signupUrl() {
-    const params = new URLSearchParams({ source: 'ucd_landing', ...attribution });
+    const params = new URLSearchParams({
+      source: 'ucd_landing',
+      ...attribution,
+      launch_session: sessionId,
+    });
     return `${API_ORIGIN}/#/signup?${params.toString()}`;
   }
 
@@ -42,11 +65,29 @@
       event,
       occurredAt: new Date().toISOString(),
       page: 'ucd',
+      source: 'ucd_landing',
+      launchSession: sessionId,
       ...attribution,
     }).catch(() => undefined);
   }
 
   if (isUcdPage) {
+    const waitlistResult = new URLSearchParams(window.location.search).get('waitlist');
+    const waitlistNotice = document.querySelector('[data-waitlist-result]');
+    if (waitlistNotice && waitlistResult) {
+      const messages = {
+        confirmed: 'Your email is confirmed. You are on the selected list.',
+        unsubscribed: 'You have been unsubscribed from that list.',
+        invalid: 'That link is invalid or has expired. Submit the form again for a new confirmation email.',
+      };
+      if (messages[waitlistResult]) {
+        waitlistNotice.textContent = messages[waitlistResult];
+        waitlistNotice.classList.add(waitlistResult === 'invalid' ? 'error' : 'success');
+        waitlistNotice.hidden = false;
+        waitlistNotice.focus();
+      }
+    }
+
     document.querySelectorAll('.js-signup-cta').forEach((link) => {
       link.href = signupUrl();
       link.addEventListener('click', () => track('landing_cta_clicked'));
@@ -67,6 +108,7 @@
         event.preventDefault();
         const email = form.elements.email.value.trim();
         const consent = form.elements.consent.checked;
+        const marketingConsent = form.elements.marketingConsent.checked;
         const status = form.querySelector('.form-status');
         const button = form.querySelector('button[type="submit"]');
 
@@ -91,12 +133,13 @@
             email,
             list: form.dataset.list,
             consent: true,
+            marketingConsent,
             source: 'ucd_landing',
+            launchSession: sessionId,
             ...attribution,
           });
-          status.textContent = response.status === 409 ? 'You’re already on this list.' : 'You’re on the list. Check your inbox for updates.';
+          status.textContent = 'Check your inbox to confirm your place.';
           status.classList.add('success');
-          if (form.dataset.list === 'ios' && response.status !== 409) track('ios_waitlist_signup');
           form.reset();
         } catch (_error) {
           status.textContent = 'We did not save your email. Please try again.';

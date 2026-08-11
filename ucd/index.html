@@ -13,11 +13,8 @@
   <link rel="canonical" href="https://untitledmanagementsoftware.com/ucd/">
   <link rel="icon" type="image/svg+xml" href="../assets/img/UMS%20Logo.svg">
   <link rel="manifest" href="../manifest.json">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap">
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/launch.css?v=20260810-svgicons">
+  <link rel="stylesheet" href="../assets/css/launch.css?v=20260810-responsive-hero-v8">
 </head>
 <body class="ucd-page" data-page="ucd">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -38,11 +35,12 @@
 
   <main id="main-content">
     <section class="hero-section ucd-hero">
+      <img class="ucd-hero-background" src="../assets/img/ucd-belfield-hero-wide.svg?v=20260811-supplied-campus-v6" alt="" aria-hidden="true">
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-12 col-xl-6">
-            <span class="eyebrow">Built by a UCD student</span>
-            <h1>Your schoolwork, organized without AI.</h1>
+            <span class="eyebrow"><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#graduation-cap"></use></svg>Built by a UCD student</span>
+            <h1>Your schoolwork, organized without <span>AI.</span></h1>
             <p class="hero-copy">Bring in your Brightspace dates, decide when you want to work, and see what matters today. UMS keeps courses, deadlines, schedules, notes, reminders, and study plans in one place.</p>
             <div class="hero-actions">
               <a class="btn btn-lg btn-ums js-signup-cta" href="https://app.untitledmanagementsoftware.com/#/signup">Open UMS: free at UCD</a>
@@ -54,20 +52,27 @@
               <span><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#shield-check"></use></svg>No payment card required</span>
               <span><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#calendar-days"></use></svg>Free through 17 January 2027</span>
             </div>
-          </div>
-          <div class="col-12 col-xl-6">
-            <div class="product-stage ucd-stage">
-              <img src="../assets/img/UMS-Dashboard.svg" alt="Illustration of the UMS dashboard showing assignments, classes, and today’s work" width="900" height="620">
-              <div class="today-card" aria-hidden="true"><span>Today</span><strong>Three next steps</strong><small>You decide what changes.</small></div>
-            </div>
+            <p class="independence-note"><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#shield-check"></use></svg><span><strong>Independent student project.</strong> Not affiliated with or endorsed by UCD.</span></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ucd-message-strip" aria-label="UMS promise"><div class="container"><p>Brightspace tells you what’s due. UMS helps you make a plan.</p></div></section>
+    <section class="ucd-message-strip" aria-label="UMS promise"><img src="../assets/img/ucd-campus-skyline.svg" alt="" aria-hidden="true"><div class="container"><p><span>Made for student life at Belfield.</span> Brightspace tells you what’s due. UMS helps you make a plan.</p></div></section>
 
-    <section class="section-space" id="how-it-works">
+    <section class="section-space ucd-product-preview-section" aria-labelledby="product-preview-heading">
+      <div class="container">
+        <div class="ucd-product-preview-shell">
+          <div class="ucd-product-preview-copy"><span class="eyebrow">Your day in UMS</span><h2 id="product-preview-heading">Campus context outside. Your semester inside.</h2><p>Open one workspace for study tasks, assignments, classes, exams, and events. The dashboard stays focused on what needs your attention now.</p></div>
+          <div class="ucd-product-preview-frame">
+            <img src="../assets/img/UMS-Dashboard.svg?v=20260810-current-dashboard" alt="Illustration of the current UMS dashboard showing study tasks, exams, assignments, classes, and events" width="900" height="620">
+            <div class="today-card" aria-hidden="true"><span>Today</span><strong>Three next steps</strong><small>You decide what changes.</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space ucd-workflow-section" id="how-it-works">
       <div class="container">
         <div class="section-heading"><span class="eyebrow">Walkthrough</span><h2>Turn exam dates into a plan you control.</h2><p>Review every import and change every task.</p></div>
         <div class="workflow-grid ucd-workflow">
@@ -80,26 +85,31 @@
       </div>
     </section>
 
-    <section class="section-space surface-section" id="ai-free" data-track-view="ai_free_explainer_viewed">
+    <section class="section-space surface-section ucd-feature-panel-section" id="ai-free" data-track-view="ai_free_explainer_viewed">
       <div class="container">
-        <div class="row g-5 align-items-start">
-          <div class="col-12 col-lg-5"><span class="eyebrow">What AI-free means</span><h2>No prompts. No AI credits. No productivity maze.</h2><p class="section-lead">UMS is for students who want to organize schoolwork without AI. Other tools are your choice.</p></div>
+        <div class="ucd-feature-panel">
+        <div class="row g-5 align-items-center">
+          <div class="col-12 col-lg-5"><span class="eyebrow">What AI-free means</span><h2>No prompts. No AI credits. No productivity maze.</h2><p class="section-lead">UMS is for students who want to organize schoolwork without AI. Other tools are your choice.</p><img class="ucd-panel-illustration" src="../assets/img/ucd-campus-scene.svg" alt="" aria-hidden="true"></div>
           <div class="col-12 col-lg-7">
             <ul class="check-list">
               <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>No AI chatbot and no LLMs.</span></li>
               <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>No generated or rewritten student notes.</span></li>
-              <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>No schoolwork sent to AI models.</span></li>
+              <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>UMS does not send your schoolwork to generative-AI models or large-language-model services.</span></li>
               <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>No academic recommendations you cannot inspect.</span></li>
               <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>Study plans use dates, effort estimates, and availability you choose.</span></li>
               <li><svg class="ums-icon" aria-hidden="true"><use href="../assets/img/fontawesome-pro.svg#check"></use></svg><span>Every imported item and planned task can be inspected, edited, moved, or deleted.</span></li>
             </ul>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
-    <section class="section-space" id="waitlists">
+    <section class="section-space ucd-waitlist-section" id="waitlists">
       <div class="container">
+        <div class="ucd-waitlist-panel">
+        <img class="ucd-waitlist-skyline" src="../assets/img/ucd-campus-skyline.svg" alt="" aria-hidden="true">
+        <p class="waitlist-result" data-waitlist-result role="status" aria-live="polite" tabindex="-1" hidden></p>
         <div class="section-heading"><span class="eyebrow">Not ready to verify yet?</span><h2>Keep your place without pretending the iPhone app is here.</h2><p>Use a personal email if your UCD account is not ready, or opt in for iPhone app updates.</p></div>
         <div class="waitlist-grid">
           <article class="waitlist-card">
@@ -107,6 +117,7 @@
             <form class="launch-waitlist" data-list="ucd_incoming" novalidate>
               <label for="incoming-email">Personal email</label><input class="form-control" id="incoming-email" name="email" type="email" autocomplete="email" required>
               <label class="consent-row"><input name="consent" type="checkbox" required><span>I agree to receive UCD launch updates from UMS. I can unsubscribe at any time.</span></label>
+              <label class="consent-row"><input name="marketingConsent" type="checkbox"><span>Also send me occasional general UMS product news (optional).</span></label>
               <button class="btn btn-ums" type="submit">Join UCD waitlist</button><p class="form-status" role="status" aria-live="polite"></p>
             </form>
           </article>
@@ -115,14 +126,16 @@
             <form class="launch-waitlist" data-list="ios" novalidate>
               <label for="ios-email">Email</label><input class="form-control" id="ios-email" name="email" type="email" autocomplete="email" required>
               <label class="consent-row"><input name="consent" type="checkbox" required><span>I agree to receive iPhone app updates from UMS. I can unsubscribe at any time.</span></label>
+              <label class="consent-row"><input name="marketingConsent" type="checkbox"><span>Also send me occasional general UMS product news (optional).</span></label>
               <button class="btn btn-ums" type="submit">Join iPhone waitlist</button><p class="form-status" role="status" aria-live="polite"></p>
             </form>
           </article>
         </div>
+        </div>
       </div>
     </section>
 
-    <section class="final-cta"><div class="container"><div><span class="eyebrow">Free at UCD this autumn</span><h2>Your deadlines. Your notes. Your decisions.</h2><p>Open UMS in your browser. No download and no payment card required.</p><a class="btn btn-lg btn-light js-signup-cta" href="https://app.untitledmanagementsoftware.com/#/signup">Open UMS: free at UCD</a></div></div></section>
+    <section class="final-cta"><div class="container"><div><img class="final-cta-skyline" src="../assets/img/ucd-campus-skyline.svg" alt="" aria-hidden="true"><span class="eyebrow">Free at UCD this autumn</span><h2>Your deadlines. Your notes. Your decisions.</h2><p>Open UMS in your browser. No download and no payment card required.</p><a class="btn btn-lg btn-light js-signup-cta" href="https://app.untitledmanagementsoftware.com/#/signup">Open UMS: free at UCD</a></div></div></section>
   </main>
 
   <footer class="site-footer">
@@ -134,6 +147,6 @@
     <p class="footer-bottom">Untitled Management Software © 2026</p>
   </footer>
   <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
-  <script defer src="../assets/js/landing.js?v=20260810-svgicons"></script>
+  <script defer src="../assets/js/landing.js?v=20260810-ucd-launch"></script>
 </body>
 </html>
