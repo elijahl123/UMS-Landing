@@ -1257,6 +1257,38 @@ body:not(.ucd-page) .workflow-grid h3 { margin-top: 1.25rem; color: var(--brand-
 /* Dedicated product preview keeps the Belfield hero artwork unobstructed. */
 .ucd-page .ucd-hero { min-height: 780px; }
 
+.ucd-page .ucd-hero-copy-panel {
+  --hero-accessible-coral: #9f3f3f;
+  --hero-accessible-coral-hover: #833333;
+  padding: clamp(1.35rem, 3vw, 2.5rem);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 8px solid var(--brand);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 52px rgba(86, 73, 76, .16);
+}
+
+.ucd-page .ucd-hero-copy-panel .eyebrow,
+.ucd-page .ucd-hero-copy-panel h1 span { color: var(--hero-accessible-coral); }
+
+.ucd-page .ucd-hero-copy-panel .btn-ums {
+  color: #fff;
+  background: var(--hero-accessible-coral);
+  border-color: var(--hero-accessible-coral);
+}
+
+.ucd-page .ucd-hero-copy-panel .btn-ums:hover,
+.ucd-page .ucd-hero-copy-panel .btn-ums:focus {
+  color: #fff;
+  background: var(--hero-accessible-coral-hover);
+  border-color: var(--hero-accessible-coral-hover);
+}
+
+.ucd-page .ucd-hero-copy-panel .hero-copy,
+.ucd-page .ucd-hero-copy-panel .trust-line { color: var(--muted); }
+
+.ucd-page .ucd-hero-copy-panel .independence-note { background: var(--surface); }
+
 .ucd-page .ucd-product-preview-section {
   background: #fff;
   border-bottom: 1px solid var(--line);
@@ -1311,6 +1343,7 @@ body:not(.ucd-page) .workflow-grid h3 { margin-top: 1.25rem; color: var(--brand-
 }
 
 @media (max-width: 575px) {
+  .ucd-page .ucd-hero-copy-panel { padding: 1.1rem; border-left-width: 6px; }
   .ucd-page .ucd-product-preview-shell { padding: 1rem; gap: 1.25rem; }
   .ucd-page .ucd-product-preview-frame { padding: .45rem; }
   .ucd-page .ucd-product-preview-frame .today-card {

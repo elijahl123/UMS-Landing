@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ums-landing-v26-supplied-campus';
+const CACHE_NAME = 'ums-landing-v28-hero-panel-a11y';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -10,7 +10,7 @@ const APP_SHELL = [
   '/manifest.json',
   '/assets/bootstrap/css/bootstrap.min.css',
   '/assets/bootstrap/js/bootstrap.min.js',
-  '/assets/css/launch.css?v=20260810-responsive-hero-v8',
+  '/assets/css/launch.css?v=20260811-hero-panel-a11y-v11',
   '/assets/js/landing.js?v=20260810-ucd-launch',
   '/assets/img/UMS%20Logo.svg',
   '/assets/img/UMS-Dashboard.svg?v=20260810-current-dashboard',
