@@ -41,6 +41,21 @@ p { color: var(--muted); }
 .navbar-toggler { border-color: var(--line); }
 .navbar-toggler .ums-icon { width: 1.25rem; height: 1.25rem; }
 
+@media (max-width: 991px) {
+  .site-nav .navbar-toggler {
+    color: var(--brand);
+    background: #fff;
+    border: 2px solid var(--brand);
+  }
+
+  .site-nav .navbar-toggler:hover,
+  .site-nav .navbar-toggler:focus {
+    color: #fff;
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+  }
+}
+
 .btn { border-radius: 8px; font-weight: 600; box-shadow: none; }
 .btn-ums { color: #fff; background: var(--brand); border: 1px solid var(--brand); box-shadow: none; }
 .btn-ums:hover, .btn-ums:focus { color: #fff; background: var(--brand-dark); border-color: var(--brand-dark); }
