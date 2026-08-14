@@ -1,21 +1,24 @@
-const CACHE_NAME = 'ums-landing-v30-ums-menu';
+const CACHE_NAME = 'ums-landing-v35-campus-brand-alignment';
 const APP_SHELL = [
   '/',
   '/index.html',
   '/ucd/',
   '/ucd/index.html',
+  '/palomar/',
+  '/palomar/index.html',
   '/privacy-policy/',
   '/terms/',
   '/offline.html',
   '/manifest.json',
   '/assets/bootstrap/css/bootstrap.min.css',
   '/assets/bootstrap/js/bootstrap.min.js',
-  '/assets/css/launch.css?v=20260813-ums-menu-v13',
-  '/assets/js/landing.js?v=20260810-ucd-launch',
+  '/assets/css/launch.css?v=20260814-campus-launch-v4',
+  '/assets/js/landing.js?v=20260814-campus-launch-v3',
   '/assets/img/UMS%20Logo.svg',
   '/assets/img/UMS-Dashboard.svg?v=20260810-current-dashboard',
   '/assets/img/ucd-belfield-hero-wide.svg?v=20260811-supplied-campus-v6',
-  '/assets/img/ucd-campus-skyline.svg'
+  '/assets/img/ucd-campus-skyline.svg',
+  '/assets/img/palomar-campus-hero.svg?v=20260814-pal2'
 ];
 
 self.addEventListener('install', (event) => {

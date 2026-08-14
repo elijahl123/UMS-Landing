@@ -1,16 +1,17 @@
 (() => {
   'use strict';
 
-  const isUcdPage = document.body.dataset.page === 'ucd';
+  const page = document.body.dataset.page;
+  const source = document.body.dataset.source;
+  const incomingList = document.body.dataset.incomingList;
+  const isCampusPage = ['ucd', 'palomar'].includes(page) && ['ucd_landing', 'palomar_landing'].includes(source);
   const attributionKeys = ['campaign', 'ambassador', 'society', 'referral'];
   const allowedValue = /^[A-Za-z0-9._-]{1,64}$/;
   const API_ORIGIN = 'https://app.untitledmanagementsoftware.com';
-  const launchSessionKey = 'ums_ucd_launch_session';
+  const launchSessionKey = `ums_${page || 'site'}_launch_session`;
 
   function randomSessionId() {
-    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
-      return window.crypto.randomUUID().replaceAll('-', '');
-    }
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID().replaceAll('-', '');
     const bytes = new Uint8Array(16);
     window.crypto.getRandomValues(bytes);
     return Array.from(bytes, (value) => value.toString(16).padStart(2, '0')).join('');
@@ -28,23 +29,17 @@
     const params = new URLSearchParams(window.location.search);
     const attribution = {};
     attributionKeys.forEach((key) => {
-      const raw = params.get(key);
-      if (!raw) return;
-      const value = raw.trim();
-      if (allowedValue.test(value)) attribution[key] = value;
+      const value = params.get(key)?.trim();
+      if (value && allowedValue.test(value)) attribution[key] = value;
     });
     return attribution;
   }
 
   const attribution = readAttribution();
-  const sessionId = isUcdPage ? launchSession() : null;
+  const sessionId = isCampusPage ? launchSession() : null;
 
   function signupUrl() {
-    const params = new URLSearchParams({
-      source: 'ucd_landing',
-      ...attribution,
-      launch_session: sessionId,
-    });
+    const params = new URLSearchParams({ source, ...attribution, launch_session: sessionId });
     return `${API_ORIGIN}/#/signup?${params.toString()}`;
   }
 
@@ -64,14 +59,14 @@
     return postJson('/api/launch/events', {
       event,
       occurredAt: new Date().toISOString(),
-      page: 'ucd',
-      source: 'ucd_landing',
+      page,
+      source,
       launchSession: sessionId,
       ...attribution,
     }).catch(() => undefined);
   }
 
-  if (isUcdPage) {
+  if (isCampusPage) {
     const waitlistResult = new URLSearchParams(window.location.search).get('waitlist');
     const waitlistNotice = document.querySelector('[data-waitlist-result]');
     if (waitlistNotice && waitlistResult) {
@@ -111,7 +106,6 @@
         const marketingConsent = form.elements.marketingConsent.checked;
         const status = form.querySelector('.form-status');
         const button = form.querySelector('button[type="submit"]');
-
         status.className = 'form-status';
         if (!form.elements.email.checkValidity()) {
           status.textContent = 'Enter a valid email address.';
@@ -125,16 +119,16 @@
           form.elements.consent.focus();
           return;
         }
-
         button.disabled = true;
         status.textContent = 'Joining…';
         try {
-          const response = await postJson('/api/launch/waitlist', {
+          const list = form.dataset.list === 'incoming' ? incomingList : form.dataset.list;
+          await postJson('/api/launch/waitlist', {
             email,
-            list: form.dataset.list,
+            list,
             consent: true,
             marketingConsent,
-            source: 'ucd_landing',
+            source,
             launchSession: sessionId,
             ...attribution,
           });
@@ -166,7 +160,5 @@
     contactForm.addEventListener('pointerenter', loadFormHandler, { once: true });
   }
 
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => undefined));
-  }
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => undefined));
 })();

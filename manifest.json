@@ -20,5 +20,9 @@
     "name": "UCD launch",
     "short_name": "UCD",
     "url": "/ucd/"
+  }, {
+    "name": "Palomar launch",
+    "short_name": "Palomar",
+    "url": "/palomar/"
   }]
 }

@@ -12,6 +12,7 @@ const files = [
   'privacy-policy',
   'terms',
   'ucd',
+  'palomar',
   'assets/bootstrap/css/bootstrap.min.css',
   'assets/bootstrap/js/bootstrap.min.js',
   'assets/css/launch.css',

@@ -1369,3 +1369,40 @@ body:not(.ucd-page) .workflow-grid h3 { margin-top: 1.25rem; color: var(--brand-
     margin-top: .65rem;
   }
 }
+
+/* Palomar keeps the shared UMS type and palette; only its supplied artwork needs page-specific framing. */
+.palomar-page {
+  color: var(--ink);
+  background: var(--surface);
+  font-family: Poppins, sans-serif;
+}
+
+.palomar-page .ucd-hero { background: var(--surface); }
+.palomar-page .ucd-hero-background { object-position: center 52%; }
+.palomar-page .ucd-hero::before {
+  background:
+    linear-gradient(90deg, rgba(247, 247, 247, .98) 0%, rgba(247, 247, 247, .94) 29%, rgba(247, 247, 247, .72) 47%, rgba(247, 247, 247, .18) 72%, rgba(247, 247, 247, .04) 100%),
+    linear-gradient(180deg, rgba(247, 247, 247, .34), transparent 28%, transparent 76%, rgba(247, 247, 247, .5));
+}
+.palomar-page .ucd-panel-illustration { max-height: 250px; object-fit: contain; }
+
+@media (max-width: 767px) {
+  .palomar-page .ucd-hero-background { object-position: 59% center; }
+  .palomar-page .ucd-hero::before {
+    background: linear-gradient(90deg, rgba(247, 247, 247, .97), rgba(247, 247, 247, .86) 72%, rgba(247, 247, 247, .5));
+  }
+  .palomar-page .site-nav .brand-lockup,
+  .palomar-page .skip-link,
+  .palomar-page .site-nav .nav-link,
+  .palomar-page .site-nav .btn,
+  .palomar-page .navbar-toggler,
+  .palomar-page .hero-actions .btn,
+  .palomar-page .launch-waitlist .btn,
+  .palomar-page .launch-waitlist .form-control,
+  .palomar-page .final-cta .btn,
+  .palomar-page .site-footer a { min-height: 48px; }
+  .palomar-page .site-nav .brand-lockup,
+  .palomar-page .site-nav .nav-link,
+  .palomar-page .site-footer a { display: flex; align-items: center; }
+  .palomar-page .consent-row { min-height: 48px; padding: .35rem 0; }
+}
