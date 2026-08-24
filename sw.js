@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ums-landing-v35-campus-brand-alignment';
+const CACHE_NAME = 'ums-landing-v36-campus-aware-offline';
 const APP_SHELL = [
   '/',
   '/index.html',
