@@ -1,5 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8ad9d"><title>UMS is offline</title><link rel="stylesheet" href="/assets/css/launch.css?v=20260813-ums-menu-v13"></head>
-<body><main class="container section-space"><div class="policy-card"><span class="eyebrow">Offline</span><h1>You’re not connected just now.</h1><p>The UMS launch page needs a connection to open signup or join a waitlist. Check your connection and try again.</p><a class="btn btn-ums" href="/ucd/">Return to the UCD page</a></div></main></body>
+<body><main class="container section-space"><div class="policy-card"><span class="eyebrow">Offline</span><h1>You’re not connected just now.</h1><p>The UMS launch page needs a connection to open signup or join a waitlist. Check your connection and try again.</p><a class="btn btn-ums" id="offline-return" href="/">Return to the UMS page</a></div></main>
+<script>
+(function () {
+  var link = document.getElementById('offline-return');
+  var path = window.location.pathname;
+  if (path.indexOf('/palomar') === 0) {
+    link.href = '/palomar/';
+    link.textContent = 'Return to the Palomar page';
+  } else if (path.indexOf('/ucd') === 0) {
+    link.href = '/ucd/';
+    link.textContent = 'Return to the UCD page';
+  }
+})();
+</script>
+</body>
 </html>
