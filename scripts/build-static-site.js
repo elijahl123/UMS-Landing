@@ -18,7 +18,6 @@ const files = [
   'assets/css/launch.css',
   'assets/css/styles.min.css',
   'assets/img',
-  'assets/js/app.js',
   'assets/js/landing.js',
   'assets/js/smart-forms.min.js'
 ];
